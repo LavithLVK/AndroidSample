@@ -88,7 +88,7 @@ public class MainShawsankActivity extends AppCompatActivity
         if (id == R.id.manipulate) {
             fragment=new ManipualteFragment();
         } else if (id == R.id.view) {
-//            fragment=new ViewFragment();
+            fragment=new ViewFragment();
             Toast.makeText(getApplicationContext(),"Functionality in progress",Toast.LENGTH_SHORT).show();
         } else if (id == R.id.about) {
 //            fragment=new AboutFragment();

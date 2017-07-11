@@ -24,7 +24,7 @@
                 android:id="@+id/circle_image_item"
                 android:layout_height="60dp"
                 android:layout_width="60dp"
-                android:src="@color/colorAccent"/>
+                android:src="@color/black"/>
             <TextView
                 android:id="@+id/prisoner_name_item"
                 android:layout_height="wrap_content"
