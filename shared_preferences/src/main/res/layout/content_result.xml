@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.lvk.shared_preferences.ResultActivity"
+    tools:showIn="@layout/activity_result">
+
+    <TextView
+        android:padding="5dp"
+        android:text="NAME"
+        android:id="@+id/name_text"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"/>
+    <TextView
+        android:padding="5dp"
+        android:id="@+id/age_text"
+        android:text="AGE"
+        android:layout_below="@+id/name_text"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"/>
+    <TextView
+        android:padding="5dp"
+        android:id="@+id/status_text"
+        android:text="Status"
+        android:layout_below="@+id/age_text"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

@@ -1,0 +1,1 @@
+include ':app', ':recycler_view', ':fragments1', ':fragment_tabs', ':fragment_navigation', ':fragment_navigation2', ':shared_preferences', ':sqlite_sample', ':background_processing', ':broadcast_receivers', ':handler_thread', ':shawsank_prison'

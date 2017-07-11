@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AndroidSample.iml" filepath="$PROJECT_DIR$/AndroidSample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/background_processing/background_processing.iml" filepath="$PROJECT_DIR$/background_processing/background_processing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/broadcast_receivers/broadcast_receivers.iml" filepath="$PROJECT_DIR$/broadcast_receivers/broadcast_receivers.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fragment_navigation/fragment_navigation.iml" filepath="$PROJECT_DIR$/fragment_navigation/fragment_navigation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fragment_navigation2/fragment_navigation2.iml" filepath="$PROJECT_DIR$/fragment_navigation2/fragment_navigation2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fragment_tabs/fragment_tabs.iml" filepath="$PROJECT_DIR$/fragment_tabs/fragment_tabs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fragments1/fragments1.iml" filepath="$PROJECT_DIR$/fragments1/fragments1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/handler_thread/handler_thread.iml" filepath="$PROJECT_DIR$/handler_thread/handler_thread.iml" />
+      <module fileurl="file://$PROJECT_DIR$/recycler_view/recycler_view.iml" filepath="$PROJECT_DIR$/recycler_view/recycler_view.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shared_preferences/shared_preferences.iml" filepath="$PROJECT_DIR$/shared_preferences/shared_preferences.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shawsank_prison/shawsank_prison.iml" filepath="$PROJECT_DIR$/shawsank_prison/shawsank_prison.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sqlite_sample/sqlite_sample.iml" filepath="$PROJECT_DIR$/sqlite_sample/sqlite_sample.iml" />
+    </modules>
+  </component>
+</project>

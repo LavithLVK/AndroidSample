@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color1"
+    tools:context="com.example.lvk.sqlite_sample.MainSQLiteActivity">
+
+    <TextView
+        android:id="@+id/Shawshank_prison"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/shawshank_prison"
+        android:textSize="40sp"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="serif-monospac"
+        />
+    <RelativeLayout
+        android:layout_below="@+id/Shawshank_prison"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <EditText
+            android:padding="5dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/prisoner_name"
+            android:layout_marginTop="70dp"
+            android:layout_centerHorizontal="true"
+            android:hint="@string/prisoner_name"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"/>
+        <EditText
+            android:padding="5dp"
+            android:id="@+id/prisoner_age"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@id/prisoner_name"
+            android:layout_centerHorizontal="true"
+            android:hint="@string/age"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"/>
+        <Spinner
+            android:padding="5dp"
+            android:id="@+id/prisoner_crime"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@id/prisoner_age"
+            android:layout_centerHorizontal="true"
+            android:entries="@array/crimes"
+            android:prompt="@string/crime"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"/>
+        <Spinner
+            android:padding="5dp"
+            android:id="@+id/prisoner_status"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@id/prisoner_crime"
+            android:layout_centerHorizontal="true"
+            android:prompt="@string/Is_Sentenced"
+            android:entries="@array/boolean_values"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"/>
+
+        <Button
+            android:padding="5dp"
+            android:background="@drawable/mybutton"
+            android:id="@+id/add_record"
+            android:layout_below="@id/prisoner_status"
+            android:layout_margin="40dp"
+            android:text="@string/Add_Prisoner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:background="@drawable/mybutton"
+            android:id="@+id/cancel_action"
+            android:layout_toRightOf="@id/add_record"
+            android:layout_below="@id/prisoner_status"
+            android:layout_margin="40dp"
+            android:text="@string/cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

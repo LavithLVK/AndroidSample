@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.lvk.shawsank_prison.Activities.AddPrisonerActivity"
+    android:background="#000000">
+    <RelativeLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:background="@drawable/border1"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+        <ScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="450dp"
+            android:layout_margin="20dp"
+            >
+            <TableLayout
+                android:layout_height="match_parent"
+                android:layout_width="match_parent">
+
+                <TextView
+                    android:layout_margin="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:textSize="16sp"
+                    android:text="@string/edit_prisoner_name"
+                    android:paddingTop="@dimen/activity_vertical_margin"/>
+
+                <EditText
+                    android:id="@+id/edit_prisoner_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp" />
+
+                <TextView
+                    android:layout_margin="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:textSize="16sp"
+                    android:text="@string/edit_prisoner_email"
+                    android:paddingTop="@dimen/activity_vertical_margin"/>
+
+                <EditText
+                    android:id="@+id/edit_prisoner_email"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:inputType="textEmailAddress"
+                    android:layout_margin="15dp"
+                    />
+
+                <TextView
+                    android:layout_margin="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:textSize="16sp"
+                    android:text="@string/edit_prisoner_mobile"
+                    android:paddingTop="@dimen/activity_vertical_margin"/>
+
+                <EditText
+                    android:id="@+id/edit_prisoner_mobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:inputType="phone"
+                    android:phoneNumber="true" />
+
+                <TextView
+                    android:layout_margin="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:textSize="16sp"
+                    android:text="@string/edit_prisoner_dob"
+                    android:paddingTop="@dimen/activity_vertical_margin"/>
+                <LinearLayout android:orientation="horizontal">
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/calender_icon"
+                        android:src="@drawable/calender"
+                        android:layout_height="60dp"
+                        android:layout_width="60dp"
+                        android:background="#bfbfbf"
+                        android:layout_marginStart="15dp"
+                        android:layout_weight="1" />
+                    <EditText
+                        android:id="@+id/edit_prisoner_dob"
+                        android:enabled="false"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_margin="15dp"
+                        android:layout_weight="4"
+                    />
+
+                </LinearLayout>
+                <TextView
+                    android:layout_margin="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:textSize="16sp"
+                    android:text="@string/edit_profile_photo"
+                    android:paddingTop="@dimen/activity_vertical_margin"/>
+                <Button
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:padding="5dp"
+                    android:id="@+id/upload_photo"
+                    android:text="@string/upload_photo"
+                    />
+
+                <ImageView
+                    android:id="@+id/img_form"
+                    android:layout_height="200dp"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:contentDescription="@string/desc_imageView" />
+
+                <TextView
+                    android:layout_margin="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:textSize="16sp"
+                    android:text="@string/edit_prisoner_crime"
+                    android:paddingTop="@dimen/activity_vertical_margin"/>
+
+                <Spinner
+                    android:id="@+id/edit_prisoner_crime"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:prompt="@string/select_item"
+                    android:entries="@array/crimes"
+                    android:layout_margin="15dp"
+                    />
+
+                <TextView
+                    android:layout_margin="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:textSize="16sp"
+                    android:text="@string/edit_prisoner_isSentenced"
+                    android:paddingTop="@dimen/activity_vertical_margin"/>
+
+                <Spinner
+                    android:id="@+id/edit_prisoner_sentenced"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_margin="15dp"
+                    android:prompt="@string/select_item"
+                    android:entries="@array/boolean_values"
+                    />
+
+            </TableLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/add_prisoner_button"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_below="@id/scroll_view"
+            android:layout_marginStart="50dp"
+            android:padding="10dp"
+            android:text="@string/add_prisoner"
+            android:background="@drawable/mybutton"/>
+
+        <Button
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/scroll_view"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="50dp"
+            android:padding="10dp"
+            android:text="@string/go_back"
+            android:background="@drawable/mybutton"/>
+
+    </RelativeLayout>
+</LinearLayout>

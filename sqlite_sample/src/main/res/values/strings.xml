@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">SQLite_sample</string>
+    <string name="Add_Prisoner">Add Prisoner</string>
+    <string name="View_Prisoners">View Prisoners</string>
+    <string name="shawshank_prison">Shawshank prison</string>
+    <string name="prisoner_name">Prisoner name</string>
+    <string name="age">Age</string>
+    <string name="crime">Crime</string>
+    <string name="Is_Sentenced">Is Sentenced</string>
+    <string name="add">Add</string>
+    <string name="cancel">Cancel</string>
+    <string name="id">id</string>
+
+    <!--<string name="Add_Prisoner">Add Prisoner</string>-->
+
+    <string-array name="crimes">
+        <item>Theft</item>
+        <item>Murder</item>
+        <item>Kidnap</item>
+        <item>Rape</item>
+        <item>Smuggling</item>
+        <item>Eve-teasing</item>
+        <item>Gangster</item>
+        <item>Driving on FootPath</item>
+        <item>Killing Deer</item>
+        <item>Getting Married</item>
+        <item>Arguing with girls</item>
+    </string-array>
+    <string-array name="boolean_values">
+        <item>true</item>
+        <item>false</item>
+    </string-array>
+
+</resources>

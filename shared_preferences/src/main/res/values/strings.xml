@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Shared_Preferences</string>
+    <string name="status_prompt">Choose a Marrital status</string>
+
+    <string-array name="statusluu">
+        <item>single</item>
+        <item>Married</item>
+        <item>single talak</item>
+        <item>double talak</item>
+        <item>triple talak</item>
+    </string-array>
+    <string name="title_activity_result">ResultActivity</string>
+</resources>

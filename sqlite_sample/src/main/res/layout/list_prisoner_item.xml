@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:drawableBottom="@color/colorPrimaryDark">
+
+    <TextView android:id="@+id/prisoner_id_item"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:padding="5dp"
+        android:textAlignment="center"
+        android:layout_weight="3"
+        />
+
+    <TextView android:id="@+id/prisoner_name_item"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:padding="5dp"
+        android:text="salman"
+        android:textAlignment="textStart"
+        android:layout_weight="1"/>
+
+</LinearLayout>

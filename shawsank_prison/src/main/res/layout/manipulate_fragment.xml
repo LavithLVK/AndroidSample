@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:rowCount="2" android:columnCount="2"
+    android:background="@drawable/prison">
+
+    <Button
+        android:id="@+id/add_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="2"
+        android:layout_margin="20dp"
+        android:layout_rowWeight="2"
+        android:background="@drawable/add_button"
+        android:elevation="@dimen/cardview_default_elevation"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/add_prisoner"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/delete_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="2"
+        android:layout_margin="20dp"
+        android:layout_rowWeight="2"
+        android:background="@drawable/delete_button"
+        android:elevation="@dimen/cardview_default_elevation"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/delete_Prisoner"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/update_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="2"
+        android:layout_margin="20dp"
+        android:layout_rowWeight="2"
+        android:background="@drawable/update_button"
+        android:elevation="@dimen/cardview_default_elevation"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/update_prisoner"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <!--<Button-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:text="@string/add_prisoner"-->
+        <!--android:layout_columnWeight="2"-->
+        <!--android:layout_rowWeight="2"-->
+        <!--android:background="@color/add"/>-->
+
+
+</GridLayout>
