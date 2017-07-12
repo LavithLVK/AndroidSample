@@ -48,7 +48,7 @@ public class PrisonerDBHeleper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String create_table ="CREATE TABLE " + table_users + "("
                 + id + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " + name + " TEXT,"
-                + email +" TEXT,"+mobile_No +" TEXT,"+dob+ " DATE,"+ profile_Photo_local +" TEXT,"
+                + email +" TEXT,"+mobile_No +" TEXT,"+dob+ " DATE,"+ profile_Photo_local +" BLOB,"
                 + profile_Photo_online + " TEXT," + crime+" TEXT,"+ isSentenced +" BOOLEAN, "
                 +created_at +" DATETIME DEFAULT CURRENT_TIMESTAMP," +updated_at+" DATETIME"
                 + ")";
@@ -74,12 +74,12 @@ public class PrisonerDBHeleper extends SQLiteOpenHelper {
             prisoner.setName(mCursor.getString(mCursor.getColumnIndex(name)));
             prisoner.setEmail(mCursor.getString(mCursor.getColumnIndex(email)));
             prisoner.setMobile(mCursor.getString(mCursor.getColumnIndex(mobile_No)));
-            prisoner.setDob(mCursor.getString(mCursor.getColumnIndex(dob)));
             prisoner.setPhotoPath(mCursor.getString(mCursor.getColumnIndex(profile_Photo_local)));
+            prisoner.setDob(mCursor.getString(mCursor.getColumnIndex(dob)));
             prisoner.setCrime(mCursor.getString(mCursor.getColumnIndex(crime)));
+            prisoner.setSentenced(Boolean.parseBoolean(mCursor.getString(mCursor.getColumnIndex(isSentenced))));
             prisoner.setCreated_at(mCursor.getString(mCursor.getColumnIndex(created_at)));
             prisoner.setUpadated_at(mCursor.getString(mCursor.getColumnIndex(updated_at)));
-            prisoner.setSentenced(Boolean.parseBoolean(mCursor.getString(mCursor.getColumnIndex("IsSentenced"))));
             prisoners.add(prisoner);
             mCursor.moveToNext();
         }
@@ -94,6 +94,7 @@ public class PrisonerDBHeleper extends SQLiteOpenHelper {
         values.put(email,prisoner.getName());
         values.put(mobile_No,prisoner.getName());
         values.put(dob,prisoner.getDob().toString());
+        values.put(profile_Photo_local,prisoner.getPhotoPath());
         values.put(crime,prisoner.getCrime());
         values.put(isSentenced,prisoner.getSentenced());
         return mydb.insert(table_users,null,values);

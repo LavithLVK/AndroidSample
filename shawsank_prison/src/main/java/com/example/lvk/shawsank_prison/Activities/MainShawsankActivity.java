@@ -89,11 +89,10 @@ public class MainShawsankActivity extends AppCompatActivity
             fragment=new ManipualteFragment();
         } else if (id == R.id.view) {
             fragment=new ViewFragment();
-            Toast.makeText(getApplicationContext(),"Functionality in progress",Toast.LENGTH_SHORT).show();
+//            Toast.makeText(getApplicationContext(),"Functionality in progress",Toast.LENGTH_SHORT).show();
         } else if (id == R.id.about) {
 //            fragment=new AboutFragment();
             Toast.makeText(getApplicationContext(),"Functionality in progress",Toast.LENGTH_SHORT).show();
-
         }
 
         fm=getFragmentManager();

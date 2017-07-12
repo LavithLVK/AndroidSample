@@ -24,7 +24,4 @@ public class PrisonerViewHolder extends RecyclerView.ViewHolder {
         id=(TextView)itemView.findViewById(R.id.prisoner_id_item);
     }
 
-
-
-
 }

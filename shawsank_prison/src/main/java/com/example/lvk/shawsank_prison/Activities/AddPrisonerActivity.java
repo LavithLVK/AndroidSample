@@ -303,7 +303,7 @@ public class AddPrisonerActivity extends AppCompatActivity implements DatePicker
         if(valid_String&&!name.getText().toString().isEmpty()&&!email.getText().toString().isEmpty()
                 &&!mobile.getText().toString().isEmpty()&&!image_Path.isEmpty()&&!dob.getText().toString().isEmpty()
                 &&!crime.getSelectedItem().toString().isEmpty()&&!sentenced.getSelectedItem().toString().isEmpty()){
-            prisonerDBHeleper=new PrisonerDBHeleper(getApplicationContext(),1);
+            prisonerDBHeleper=new PrisonerDBHeleper(getApplicationContext(),2);
             prisonerModel=new PrisonerModel();
             prisonerModel.setName(name.getText().toString());
             prisonerModel.setEmail(email.getText().toString());
@@ -315,6 +315,7 @@ public class AddPrisonerActivity extends AppCompatActivity implements DatePicker
             try{
                 prisonerDBHeleper.insertPrisoner(prisonerModel);
                 Toast.makeText(this,"Record Added Successfully",Toast.LENGTH_LONG).show();
+                finish();
             }catch (Exception ex){
                 ex.getStackTrace();
             }

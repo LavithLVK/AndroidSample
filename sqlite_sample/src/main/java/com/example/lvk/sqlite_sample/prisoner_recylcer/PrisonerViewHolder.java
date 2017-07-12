@@ -21,5 +21,4 @@ public class PrisonerViewHolder extends RecyclerView.ViewHolder{
     }
 
 
-
 }

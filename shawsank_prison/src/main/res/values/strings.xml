@@ -42,4 +42,8 @@
         <item>true</item>
         <item>false</item>
     </string-array>
+
+    <string name="title_activity_view_prisoner">ViewPrisonerActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="label_name">Name :</string>
 </resources>
