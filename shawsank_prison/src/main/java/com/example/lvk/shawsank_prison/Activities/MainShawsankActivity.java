@@ -97,8 +97,7 @@ public class MainShawsankActivity extends AppCompatActivity
 
         fm=getFragmentManager();
         ft=fm.beginTransaction();
-        ft.add(R.id.main_container,fragment,"first");
-        ft.addToBackStack(null);
+        ft.add(R.id.main_container,fragment);
         ft.commit();
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

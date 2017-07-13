@@ -45,5 +45,15 @@
 
     <string name="title_activity_view_prisoner">ViewPrisonerActivity</string>
     <string name="dummy_button">Dummy Button</string>
-    <string name="label_name">Name :</string>
+    <string name="label_name">Name</string>
+    <string name="label_email">Email id</string>
+    <string name="label_mobile">Mobile no.</string>
+    <string name="label_crime">Crime</string>
+    <string name="label_sentenced">Is Sentenced</string>
+    <string name="label_age">Age</string>
+    <string name="label_caught_on">Caught on</string>
+
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="update_fields_suggestion">Click On Fields You Want to Update</string>
 </resources>

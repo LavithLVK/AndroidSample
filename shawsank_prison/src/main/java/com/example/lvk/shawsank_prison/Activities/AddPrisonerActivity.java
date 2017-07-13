@@ -179,8 +179,10 @@ public class AddPrisonerActivity extends AppCompatActivity implements DatePicker
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
         month++;
-        String temp=(month<9)?("0"+month):(month+"");
-        dob.setText(dayOfMonth+"/"+temp+"/"+year);
+        String monthTemp=(month<=9)?("0"+month):(month+"");
+//        dob.setText(dayOfMonth+"/"+temp+"/"+year);
+        String dayTemp=(dayOfMonth<=9)?("0"+dayOfMonth):(dayOfMonth+"");
+        dob.setText(dayTemp+"/"+monthTemp+"/"+year);
     }
 
     @Override

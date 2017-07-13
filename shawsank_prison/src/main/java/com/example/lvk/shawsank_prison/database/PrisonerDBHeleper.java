@@ -91,9 +91,9 @@ public class PrisonerDBHeleper extends SQLiteOpenHelper {
         mydb=this.getWritableDatabase();
         ContentValues values=new ContentValues();
         values.put(name,prisoner.getName());
-        values.put(email,prisoner.getName());
-        values.put(mobile_No,prisoner.getName());
-        values.put(dob,prisoner.getDob().toString());
+        values.put(email,prisoner.getEmail());
+        values.put(mobile_No,prisoner.getMobile());
+        values.put(dob,prisoner.getDob());
         values.put(profile_Photo_local,prisoner.getPhotoPath());
         values.put(crime,prisoner.getCrime());
         values.put(isSentenced,prisoner.getSentenced());
