@@ -4,9 +4,6 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -17,10 +14,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.example.lvk.shawsank_prison.AboutFragment;
-import com.example.lvk.shawsank_prison.ManipualteFragment;
+import com.example.lvk.shawsank_prison.fragments.ManipualteFragment;
 import com.example.lvk.shawsank_prison.R;
-import com.example.lvk.shawsank_prison.ViewFragment;
+import com.example.lvk.shawsank_prison.fragments.ViewFragment;
 
 public class MainShawsankActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {

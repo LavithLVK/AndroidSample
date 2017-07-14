@@ -52,6 +52,7 @@
     <string name="label_sentenced">Is Sentenced</string>
     <string name="label_age">Age</string>
     <string name="label_caught_on">Caught on</string>
+    <string name="label_image">Profile Image</string>
 
     <string name="title_activity_fullscreen">FullscreenActivity</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>

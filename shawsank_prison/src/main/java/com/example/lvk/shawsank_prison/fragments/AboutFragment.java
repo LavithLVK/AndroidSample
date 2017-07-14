@@ -1,4 +1,4 @@
-package com.example.lvk.shawsank_prison;
+package com.example.lvk.shawsank_prison.fragments;
 
 import android.app.Fragment;
 

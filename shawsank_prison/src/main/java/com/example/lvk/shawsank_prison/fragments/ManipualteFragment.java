@@ -1,4 +1,4 @@
-package com.example.lvk.shawsank_prison;
+package com.example.lvk.shawsank_prison.fragments;
 
 import android.app.Fragment;
 import android.content.Intent;
@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.lvk.shawsank_prison.Activities.AddPrisonerActivity;
+import com.example.lvk.shawsank_prison.R;
 
 /**
  * Created by lavith.edam on 6/28/2017.
