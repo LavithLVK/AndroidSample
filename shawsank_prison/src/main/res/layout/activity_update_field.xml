@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     tools:context="com.example.lvk.shawsank_prison.Activities.UpdateFieldActivity"
     android:background="@drawable/prison">
+
     <EditText
         android:id="@+id/field_id"
         android:inputType="text"
@@ -14,12 +15,15 @@
         android:background="@drawable/my_edittext"
         android:layout_centerHorizontal="true"
         android:layout_height="40dp"
+        android:hint="@string/prisoner_id_enter"
         android:layout_width="match_parent"
         android:fontFamily="casual"/>
     <EditText
         android:id="@+id/field_name"
         android:inputType="text"
+        android:visibility="invisible"
         android:layout_below="@id/field_id"
+        android:hint="@string/prisoner_name_enter"
         android:layout_margin="20dp"
         android:background="@drawable/my_edittext"
         android:layout_centerHorizontal="true"
@@ -29,8 +33,10 @@
     <EditText
         android:id="@+id/field_email"
         android:inputType="textEmailAddress"
+        android:visibility="invisible"
         android:layout_below="@id/field_id"
         android:layout_margin="20dp"
+        android:hint="@string/prisoner_name_enter"
         android:background="@drawable/my_edittext"
         android:layout_centerHorizontal="true"
         android:layout_height="40dp"
@@ -38,52 +44,86 @@
         android:fontFamily="casual"/>
     <EditText
         android:id="@+id/field_mobile"
-        android:inputType="text"
+        android:inputType="number"
         android:layout_below="@id/field_id"
+        android:visibility="invisible"
         android:layout_margin="20dp"
         android:background="@drawable/my_edittext"
         android:layout_centerHorizontal="true"
         android:layout_height="40dp"
+        android:hint="@string/prisoner_mobile_enter"
         android:layout_width="match_parent"
         android:fontFamily="casual"/>
-    <EditText
+<!--TODO-->
+    <LinearLayout
         android:id="@+id/field_dob"
-        android:inputType="text"
         android:layout_below="@id/field_id"
+        android:orientation="horizontal"
+        android:visibility="invisible"
         android:layout_margin="20dp"
-        android:background="@drawable/my_edittext"
-        android:layout_centerHorizontal="true"
-        android:layout_height="40dp"
-        android:layout_width="match_parent"
-        android:fontFamily="casual"/>
-    <EditText
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/field_btn_dob"
+            android:src="@drawable/calender"
+            android:layout_height="60dp"
+            android:layout_width="60dp"
+            android:background="#bfbfbf"
+            android:layout_weight="1" />
+        <EditText
+            android:id="@+id/field_edit_dob"
+            android:enabled="false"
+            android:layout_height="40dp"
+            android:background="@drawable/my_edittext"
+            android:layout_width="match_parent"
+            android:layout_margin="15dp"
+            android:layout_weight="4"
+            android:layout_centerHorizontal="true"
+            android:hint="@string/prisoner_DOB_enter"
+            android:fontFamily="casual"/>
+
+    </LinearLayout>
+    <Spinner
         android:id="@+id/field_crime"
-        android:inputType="text"
         android:layout_below="@id/field_id"
+        android:visibility="invisible"
         android:layout_margin="20dp"
         android:background="@drawable/my_edittext"
         android:layout_centerHorizontal="true"
         android:layout_height="40dp"
         android:layout_width="match_parent"
-        android:fontFamily="casual"/>
-    <EditText
-        android:id="@+id/field_sentence"
-        android:inputType="text"
+        android:fontFamily="casual"
+        android:prompt="@string/prisoner_crime_enter"
+        android:entries="@array/crimes"/>
+    <Spinner
+        android:id="@id/field_sentence"
         android:layout_below="@id/field_id"
+        android:visibility="invisible"
         android:layout_margin="20dp"
         android:background="@drawable/my_edittext"
         android:layout_centerHorizontal="true"
         android:layout_height="40dp"
         android:layout_width="match_parent"
-        android:fontFamily="casual"/>
-    <EditText
+        android:fontFamily="casual"
+        android:prompt="@string/prisoner_sentence_enter"
+        android:entries="@array/boolean_values"/>
+    <Button
         android:id="@+id/field_image"
-        android:inputType="text"
         android:layout_below="@id/field_id"
+        android:visibility="invisible"
         android:layout_margin="20dp"
+        android:text="@string/upload_photo"
         android:background="@drawable/my_edittext"
         android:layout_centerHorizontal="true"
         android:layout_height="40dp"
         android:layout_width="match_parent"
         android:fontFamily="casual"/>
+    <ImageView
+        android:id="@+id/field_image_view"
+        android:layout_height="200dp"
+        android:layout_below="@id/field_image"
+        android:layout_width="match_parent"
+        android:visibility="invisible"
+        android:layout_marginTop="15dp"
+        android:contentDescription="@string/desc_imageView"/>
 </RelativeLayout>

@@ -50,11 +50,18 @@
     <string name="label_mobile">Mobile no.</string>
     <string name="label_crime">Crime</string>
     <string name="label_sentenced">Is Sentenced</string>
-    <string name="label_age">Age</string>
+    <string name="label_dob">Date Of Birth</string>
     <string name="label_caught_on">Caught on</string>
     <string name="label_image">Profile Image</string>
+    <string name="label_age">Age</string>
 
     <string name="title_activity_fullscreen">FullscreenActivity</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="update_fields_suggestion">Click On Fields You Want to Update</string>
-</resources>
+    <string name="prisoner_name_enter">Update Name of the prisoner</string>
+    <string name="prisoner_id_enter">Update Id of the prisoner</string>
+    <string name="prisoner_email_enter">Update email of the prisoner</string>
+    <string name="prisoner_mobile_enter">Update mobile no. of the prisoner</string>
+    <string name="prisoner_DOB_enter">Update DOB of the prisoner</string>
+    <string name="prisoner_sentence_enter">select prisoner sentenced or not</string>
+    <string name="prisoner_crime_enter">Select Crime of the prisoner</string>
+    v</resources>

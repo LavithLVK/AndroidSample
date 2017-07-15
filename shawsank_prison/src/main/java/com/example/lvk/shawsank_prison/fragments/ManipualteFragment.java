@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.lvk.shawsank_prison.Activities.AddPrisonerActivity;
+import com.example.lvk.shawsank_prison.Activities.DeletePrisonerActivity;
+import com.example.lvk.shawsank_prison.Activities.UpdatePrisonerActivity;
 import com.example.lvk.shawsank_prison.R;
 
 /**
@@ -60,11 +62,11 @@ public class ManipualteFragment extends Fragment {
     }
 
     public void updateButtonClick(View view){
-
+        startActivity(new Intent(getActivity(), UpdatePrisonerActivity.class));
     }
 
     public void deleteButtonClick(View view){
-
+        startActivity(new Intent(getActivity(), DeletePrisonerActivity.class));
     }
 
 }

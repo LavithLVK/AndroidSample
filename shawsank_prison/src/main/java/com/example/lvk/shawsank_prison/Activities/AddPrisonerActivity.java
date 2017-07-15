@@ -27,6 +27,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.lvk.shawsank_prison.R;
+import com.example.lvk.shawsank_prison.Utils.ImagePicker;
 import com.example.lvk.shawsank_prison.Utils.Utility;
 import com.example.lvk.shawsank_prison.database.PrisonerDBHeleper;
 import com.example.lvk.shawsank_prison.recylcer.PrisonerModel;
@@ -45,7 +46,6 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class AddPrisonerActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener{
 
-
     private static int TAKE_PHOTO_REQUESTCODE = 1116;
     private static int CHOOSE_PHOTO_REQUESTCODE = 1150;
     EditText name;
@@ -63,6 +63,7 @@ public class AddPrisonerActivity extends AppCompatActivity implements DatePicker
     Boolean valid_String;
     PrisonerModel prisonerModel;
     PrisonerDBHeleper prisonerDBHeleper;
+    ImagePicker imgPicker;
 
 
     @Override
@@ -82,6 +83,7 @@ public class AddPrisonerActivity extends AppCompatActivity implements DatePicker
         btnBack =(Button)findViewById(R.id.back_button);
         circleImageView=(CircleImageView)findViewById(R.id.calender_icon);
         imageView=(ImageView)findViewById(R.id.img_form);
+        imgPicker=new ImagePicker(imageView,this);
         final DatePickerDialog datePickerDialog=new DatePickerDialog(this,this, c.get(Calendar.YEAR),c.get(Calendar.MONTH),c.get(Calendar.DAY_OF_MONTH));
         datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
         btnBack.setOnClickListener(new View.OnClickListener() {
@@ -180,7 +182,6 @@ public class AddPrisonerActivity extends AppCompatActivity implements DatePicker
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
         month++;
         String monthTemp=(month<=9)?("0"+month):(month+"");
-//        dob.setText(dayOfMonth+"/"+temp+"/"+year);
         String dayTemp=(dayOfMonth<=9)?("0"+dayOfMonth):(dayOfMonth+"");
         dob.setText(dayTemp+"/"+monthTemp+"/"+year);
     }
@@ -189,10 +190,12 @@ public class AddPrisonerActivity extends AppCompatActivity implements DatePicker
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == Activity.RESULT_OK) {
-            if (requestCode == CHOOSE_PHOTO_REQUESTCODE)
-                onSelectFromGalleryResult(data);
-            else if (requestCode == TAKE_PHOTO_REQUESTCODE)
-                onCaptureImageResult(data);
+            if (requestCode == CHOOSE_PHOTO_REQUESTCODE){
+                image_Path = imgPicker.onSelectFromGalleryResult(data);
+            }
+            else if (requestCode == TAKE_PHOTO_REQUESTCODE){
+                image_Path = imgPicker.onCaptureImageResult(data);
+            }
         }
     }
 
@@ -208,7 +211,7 @@ public class AddPrisonerActivity extends AppCompatActivity implements DatePicker
         startActivityForResult(intent, TAKE_PHOTO_REQUESTCODE);
     }
 
-    private void selectImage() {
+    public void selectImage() {
         final CharSequence[] items = { "Take Photo", "Choose from Library",
                 "Cancel" };
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -229,76 +232,6 @@ public class AddPrisonerActivity extends AppCompatActivity implements DatePicker
             }
         });
         builder.show();
-    }
-
-    @SuppressWarnings("deprecation")
-    private void onSelectFromGalleryResult(Intent data) {
-        Bitmap bm=null;
-        if (data != null) {
-            try {
-                bm = MediaStore.Images.Media.getBitmap(getApplicationContext().getContentResolver(), data.getData());
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-        bm.compress(Bitmap.CompressFormat.JPEG, 50, bytes);
-        File destination = new File(Environment.getExternalStorageDirectory(),
-                "Shawsank_Prison/media");
-        try {
-            if(!destination.exists()){
-                destination.mkdir();
-            }
-            destination = new File(Environment.getExternalStorageDirectory(),
-                    "Shawsank_Prison/media/"+System.currentTimeMillis() + ".jpg");
-            FileOutputStream fo;
-            destination.createNewFile();
-            image_Path=destination.getAbsolutePath();
-            Toast.makeText(this,image_Path,Toast.LENGTH_SHORT).show();
-            fo = new FileOutputStream(destination);
-            fo.write(bytes.toByteArray());
-            fo.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        setImageView(bm);
-}
-
-    private void onCaptureImageResult(Intent data) {
-        Bitmap thumbnail = (Bitmap) data.getExtras().get("data");
-        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-        thumbnail.compress(Bitmap.CompressFormat.JPEG, 90, bytes);
-        File destination = new File(Environment.getExternalStorageDirectory(),
-                "Shawsank_Prison/media");
-        try {
-            if(!destination.exists()){
-                destination.mkdir();
-            }
-            destination = new File(Environment.getExternalStorageDirectory(),
-                    "Shawsank_Prison/media/"+System.currentTimeMillis() + ".jpg");
-            FileOutputStream fo;
-            destination.createNewFile();
-            image_Path=destination.getAbsolutePath();
-//            Log.d("Image Path",image_Path);
-            Toast.makeText(this,image_Path,Toast.LENGTH_SHORT).show();
-            fo = new FileOutputStream(destination);
-            fo.write(bytes.toByteArray());
-            fo.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        setImageView(thumbnail);
-    }
-
-    private void setImageView(Bitmap bitmap){
-        if(bitmap!=null) {
-            imageView.setImageBitmap(bitmap);
-            imageView.setVisibility(View.VISIBLE);
-        }
     }
 
     private void addPrisoner(View v){
