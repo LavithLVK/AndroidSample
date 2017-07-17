@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@id/relative_layout"
     tools:context="com.example.lvk.shawsank_prison.Activities.UpdateFieldActivity"
     android:background="@drawable/prison">
 
@@ -15,6 +16,7 @@
         android:background="@drawable/my_edittext"
         android:layout_centerHorizontal="true"
         android:layout_height="40dp"
+        android:paddingStart="5dp"
         android:hint="@string/prisoner_id_enter"
         android:layout_width="match_parent"
         android:fontFamily="casual"/>
@@ -25,6 +27,7 @@
         android:layout_below="@id/field_id"
         android:hint="@string/prisoner_name_enter"
         android:layout_margin="20dp"
+        android:paddingStart="5dp"
         android:background="@drawable/my_edittext"
         android:layout_centerHorizontal="true"
         android:layout_height="40dp"
@@ -38,6 +41,7 @@
         android:layout_margin="20dp"
         android:hint="@string/prisoner_name_enter"
         android:background="@drawable/my_edittext"
+        android:paddingStart="5dp"
         android:layout_centerHorizontal="true"
         android:layout_height="40dp"
         android:layout_width="match_parent"
@@ -50,6 +54,7 @@
         android:layout_margin="20dp"
         android:background="@drawable/my_edittext"
         android:layout_centerHorizontal="true"
+        android:paddingStart="5dp"
         android:layout_height="40dp"
         android:hint="@string/prisoner_mobile_enter"
         android:layout_width="match_parent"
@@ -77,8 +82,8 @@
             android:background="@drawable/my_edittext"
             android:layout_width="match_parent"
             android:layout_margin="15dp"
+            android:paddingStart="5dp"
             android:layout_weight="4"
-            android:layout_centerHorizontal="true"
             android:hint="@string/prisoner_DOB_enter"
             android:fontFamily="casual"/>
 
@@ -93,6 +98,7 @@
         android:layout_height="40dp"
         android:layout_width="match_parent"
         android:fontFamily="casual"
+        android:paddingStart="5dp"
         android:prompt="@string/prisoner_crime_enter"
         android:entries="@array/crimes"/>
     <Spinner
@@ -103,6 +109,7 @@
         android:background="@drawable/my_edittext"
         android:layout_centerHorizontal="true"
         android:layout_height="40dp"
+        android:paddingStart="5dp"
         android:layout_width="match_parent"
         android:fontFamily="casual"
         android:prompt="@string/prisoner_sentence_enter"
@@ -126,4 +133,30 @@
         android:visibility="invisible"
         android:layout_marginTop="15dp"
         android:contentDescription="@string/desc_imageView"/>
+    <LinearLayout
+        android:layout_below="@id/field_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@id/btn_update_prisoner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:background="@drawable/mybutton"
+            android:enabled="false"
+            android:padding="5dp"
+            android:text="@string/update_prisoner" />
+        <Button
+            android:id="@id/btn_go_back"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/go_back"
+            android:background="@drawable/mybutton"
+            android:padding="5dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginEnd="20dp"/>
+    </LinearLayout>
+
 </RelativeLayout>

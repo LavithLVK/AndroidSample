@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="field_sentence" type="id">field_sentence</item>
+    <item name="btn_go_back" type="id">btn_go_back</item>
+    <item name="btn_update_prisoner" type="id">btn_update_prisoner</item>
+    <item name="relative_layout" type="id">relative_layout</item>
 </resources>

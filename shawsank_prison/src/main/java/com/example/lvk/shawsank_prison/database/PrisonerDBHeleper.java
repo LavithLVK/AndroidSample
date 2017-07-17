@@ -103,9 +103,24 @@ public class PrisonerDBHeleper extends SQLiteOpenHelper {
     public PrisonerModel getPrisoner(int id){//TODO
         mydb =this.getReadableDatabase();
         PrisonerModel prisoner=new PrisonerModel();
-        prisoner = (PrisonerModel) mydb.rawQuery("select * from "+table_users+" where id ="+id,null);
-        if(mCursor.moveToNext()){
-
+        mCursor= mydb.rawQuery("select * from "+table_users+" where id ="+id+"",null);
+        if(mCursor!=null) {
+            if (mCursor.moveToFirst()) {
+                prisoner.setId(id);
+                prisoner.setName(mCursor.getString(mCursor.getColumnIndex(name)));
+                prisoner.setEmail(mCursor.getString(mCursor.getColumnIndex(email)));
+                prisoner.setMobile(mCursor.getString(mCursor.getColumnIndex(mobile_No)));
+                prisoner.setPhotoPath(mCursor.getString(mCursor.getColumnIndex(profile_Photo_local)));
+                prisoner.setDob(mCursor.getString(mCursor.getColumnIndex(dob)));
+                prisoner.setCrime(mCursor.getString(mCursor.getColumnIndex(crime)));
+                prisoner.setSentenced(Boolean.parseBoolean(mCursor.getString(mCursor.getColumnIndex(isSentenced))));
+                prisoner.setCreated_at(mCursor.getString(mCursor.getColumnIndex(created_at)));
+                prisoner.setUpadated_at(mCursor.getString(mCursor.getColumnIndex(updated_at)));
+            }
+        }
+        else
+        {
+            return prisoner;
         }
         closeDB();
         return prisoner;

@@ -29,6 +29,7 @@ import android.widget.Toast;
 import com.example.lvk.shawsank_prison.R;
 import com.example.lvk.shawsank_prison.Utils.ImagePicker;
 import com.example.lvk.shawsank_prison.Utils.Utility;
+import com.example.lvk.shawsank_prison.Utils.Validate;
 import com.example.lvk.shawsank_prison.database.PrisonerDBHeleper;
 import com.example.lvk.shawsank_prison.recylcer.PrisonerModel;
 
@@ -48,6 +49,7 @@ public class AddPrisonerActivity extends AppCompatActivity implements DatePicker
 
     private static int TAKE_PHOTO_REQUESTCODE = 1116;
     private static int CHOOSE_PHOTO_REQUESTCODE = 1150;
+    Validate validate=new Validate();
     EditText name;
     EditText email;
     EditText mobile;
@@ -114,19 +116,7 @@ public class AddPrisonerActivity extends AppCompatActivity implements DatePicker
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if(!hasFocus){
-                    int length=name.getText().length();
-                    if(length==0){
-                        name.setError( "Name is required!" );
-                        valid_String =false;
-                    }
-                    else if(length==1){
-                        name.setError( "Name Should contain more than one character." );
-                        valid_String =false;
-                    }
-                    else
-                    {
-                        valid_String=true;
-                    }
+                    valid_String=validate.validateName(name);
                 }
             }
 
@@ -135,11 +125,7 @@ public class AddPrisonerActivity extends AppCompatActivity implements DatePicker
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
               if(!hasFocus){
-                  String emailPattern = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
-                  if(!email.getText().toString().trim().matches(emailPattern)){
-                        email.setError("Enter valid email address");
-                      valid_String=false;
-                  }
+                  valid_String=validate.validateEmail(email);
               }
             }
         });
@@ -147,31 +133,7 @@ public class AddPrisonerActivity extends AppCompatActivity implements DatePicker
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if(!hasFocus){
-                    String mobile_string=mobile.getText().toString();
-                    int length=mobile_string.length();
-                    int zero_count=0;
-                    if(mobile_string.startsWith("0")){
-                        zero_count=1;
-                        for(int i=1;i<length;i++){
-                            if(mobile_string.charAt(i)=='0'){
-                                zero_count++;
-                            }
-                            else{
-                                break;
-                            }
-                        }
-                    }
-                    if(length<10){
-                        mobile.setError("mobile no. should contain 10 digits");
-                        valid_String=false;
-                    }
-                    else if(length-zero_count<10||length-zero_count>10){
-                        mobile.setError("Enter valid mobile no.");
-                        valid_String=false;
-                    }
-                    else {
-                        valid_String=true;
-                    }
+                   valid_String=validate.validateMobile(mobile);
                 }
             }
         });
@@ -180,10 +142,7 @@ public class AddPrisonerActivity extends AppCompatActivity implements DatePicker
 
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-        month++;
-        String monthTemp=(month<=9)?("0"+month):(month+"");
-        String dayTemp=(dayOfMonth<=9)?("0"+dayOfMonth):(dayOfMonth+"");
-        dob.setText(dayTemp+"/"+monthTemp+"/"+year);
+        dob.setText(validate.generateTextFromDate(year,++month,dayOfMonth));
     }
 
     @Override
