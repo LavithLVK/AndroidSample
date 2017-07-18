@@ -64,4 +64,5 @@
     <string name="prisoner_DOB_enter">Update DOB of the prisoner</string>
     <string name="prisoner_sentence_enter">select prisoner sentenced or not</string>
     <string name="prisoner_crime_enter">Select Crime of the prisoner</string>
+    <string name="get_info">Get Info</string>
     v</resources>

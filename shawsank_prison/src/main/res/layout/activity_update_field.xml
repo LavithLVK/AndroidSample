@@ -7,24 +7,37 @@
     tools:context="com.example.lvk.shawsank_prison.Activities.UpdateFieldActivity"
     android:background="@drawable/prison">
 
-    <EditText
-        android:id="@+id/field_id"
-        android:inputType="text"
+    <LinearLayout
+        android:id="@+id/field_id_linear"
         android:layout_marginTop="150dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/my_edittext"
         android:layout_centerHorizontal="true"
-        android:layout_height="40dp"
-        android:paddingStart="5dp"
-        android:hint="@string/prisoner_id_enter"
-        android:layout_width="match_parent"
-        android:fontFamily="casual"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/field_id"
+            android:focusableInTouchMode="true"
+            android:inputType="number"
+            android:background="@drawable/my_edittext"
+            android:layout_height="40dp"
+            android:paddingStart="5dp"
+            android:layout_margin="5dp"
+            android:hint="@string/prisoner_id_enter"
+            android:layout_width="wrap_content"
+            android:fontFamily="casual"/>
+        <Button
+            android:id="@+id/field_id_info"
+            android:layout_margin="5dp"
+            android:text="@string/get_info"
+            android:fontFamily="casual"
+            android:background="@drawable/mybutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
     <EditText
         android:id="@+id/field_name"
         android:inputType="text"
         android:visibility="invisible"
-        android:layout_below="@id/field_id"
+        android:layout_below="@id/field_id_linear"
         android:hint="@string/prisoner_name_enter"
         android:layout_margin="20dp"
         android:paddingStart="5dp"
@@ -37,7 +50,7 @@
         android:id="@+id/field_email"
         android:inputType="textEmailAddress"
         android:visibility="invisible"
-        android:layout_below="@id/field_id"
+        android:layout_below="@id/field_id_linear"
         android:layout_margin="20dp"
         android:hint="@string/prisoner_name_enter"
         android:background="@drawable/my_edittext"
@@ -49,7 +62,7 @@
     <EditText
         android:id="@+id/field_mobile"
         android:inputType="number"
-        android:layout_below="@id/field_id"
+        android:layout_below="@id/field_id_linear"
         android:visibility="invisible"
         android:layout_margin="20dp"
         android:background="@drawable/my_edittext"
@@ -62,7 +75,7 @@
 <!--TODO-->
     <LinearLayout
         android:id="@+id/field_dob"
-        android:layout_below="@id/field_id"
+        android:layout_below="@id/field_id_linear"
         android:orientation="horizontal"
         android:visibility="invisible"
         android:layout_margin="20dp"
@@ -90,7 +103,7 @@
     </LinearLayout>
     <Spinner
         android:id="@+id/field_crime"
-        android:layout_below="@id/field_id"
+        android:layout_below="@id/field_id_linear"
         android:visibility="invisible"
         android:layout_margin="20dp"
         android:background="@drawable/my_edittext"
@@ -103,7 +116,7 @@
         android:entries="@array/crimes"/>
     <Spinner
         android:id="@id/field_sentence"
-        android:layout_below="@id/field_id"
+        android:layout_below="@id/field_id_linear"
         android:visibility="invisible"
         android:layout_margin="20dp"
         android:background="@drawable/my_edittext"
@@ -116,7 +129,7 @@
         android:entries="@array/boolean_values"/>
     <Button
         android:id="@+id/field_image"
-        android:layout_below="@id/field_id"
+        android:layout_below="@id/field_id_linear"
         android:visibility="invisible"
         android:layout_margin="20dp"
         android:text="@string/upload_photo"

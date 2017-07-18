@@ -115,6 +115,7 @@ public class UpdateFieldActivity extends AppCompatActivity implements DatePicker
                         dialog.cancel();
                     }
                 });
+                builder.show();
             }
         });
         relativeLayout.setOnTouchListener(new View.OnTouchListener() {
@@ -156,11 +157,17 @@ public class UpdateFieldActivity extends AppCompatActivity implements DatePicker
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if(!hasFocus){
-                    prisoner = prisonerDBHeleper.getPrisoner(Integer.parseInt(edtId.getText().toString()));
-                    if(prisoner.getName()!=null){
-                        isIdValid =true;
-                        enableField(activeField, FieldType.fieldUpdate);
-                        btnUpdatePrisoner.setEnabled(false);
+                    if(!edtId.getText().toString().equals("")){
+                        prisoner = prisonerDBHeleper.getPrisoner(Integer.parseInt(edtId.getText().toString()));
+                        if(prisoner.getName()!=null){
+                            isIdValid =true;
+                            enableField(activeField, FieldType.fieldUpdate);
+                            btnUpdatePrisoner.setEnabled(false);
+                        }
+                        else {
+                            edtId.setError("Enter Valid Id.");
+                            isIdValid =false;
+                        }
                     }
                     else {
                         edtId.setError("Enter Valid Id.");
@@ -244,12 +251,11 @@ public class UpdateFieldActivity extends AppCompatActivity implements DatePicker
             else if (requestCode == TAKE_PHOTO_REQUESTCODE){
                 image_path = imgPicker.onCaptureImageResult(data);
             }
-            if(editableStringField.equals(image_path)){
-                btnUpdatePrisoner.setEnabled(false);
-            }
-            else
-            {
+            if(isIdValid && !editableStringField.equals(image_path)){
                 btnUpdatePrisoner.setEnabled(true);
+            }
+            else{
+                btnUpdatePrisoner.setEnabled(false);
             }
         }
     }
